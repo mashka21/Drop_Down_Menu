@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppines', sans-serif;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #0e1538;
+}
+.box,.box1,.box2,.box3{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	border-radius: 20px;
+}
+/*normarl rotation*/
+.box::before,.box1::before,.box2::before,.box3::before{
+	content: '';
+	position: absolute;
+	width: 150px;
+	height: 140%;
+	background: linear-gradient(#00ccff,#d400d4);
+	animation: animate 3s linear infinite;
+}
+/*rotation thin*/
+.box::after,.box1::after,.box2::after,.box3::after{
+	content: '';
+	position: absolute;
+	/*-----*/
+	inset: 4px;
+	/*-------*/
+	border-radius: 15px;
+	background: #0e1538;
+}
+
+@keyframes animate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.box h2{
+	color: #fff;
+	font-size: 10em;
+	z-index: 1;
+}
+
+
+/*other boxes aan kudaray*/
+
+.box1{
+	position: absolute;
+	top: -200px;
+	left: 20px;
+}
+.box2{
+	position: absolute;
+	top: -20px;
+	right: -20px;
+}
+.box3{
+	position: absolute;
+	bottom: 80px;
+	left: -130px;
+}
+
+
